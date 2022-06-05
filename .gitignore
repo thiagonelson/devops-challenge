@@ -3,6 +3,7 @@
 
 ### Ansible ###
 *.retry
+.env
 
 ### Vim ###
 # Swap

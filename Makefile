@@ -14,4 +14,4 @@ tf-apply:
 	docker run -it --rm -v ~/.aws:/root/.aws -v $${PWD}/terraform:/app -w /app -e TF_VAR_ssh_keys="${TF_VAR_ssh_keys}" -e AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} -e AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} hashicorp/terraform:${TERRAFORM_VERSION} apply "plano"
 
 tf-destroy:
-	docker run -it --rm -v ~/.aws:/root/.aws -v $${PWD}/terraform:/app -w /app -e AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} -e AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} hashicorp/terraform:${TERRAFORM_VERSION} destroy
+	docker run -it --rm -v ~/.aws:/root/.aws -v $${PWD}/terraform:/app -w /app -e TF_VAR_ssh_keys="${TF_VAR_ssh_keys}" -e AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} -e AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} hashicorp/terraform:${TERRAFORM_VERSION} destroy

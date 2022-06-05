@@ -1,0 +1,11 @@
+FROM node:alpine3.12 as build
+WORKDIR /app
+COPY . ./
+RUN  npm install \
+     && npm run build
+ 
+FROM node:alpine3.12
+WORKDIR /validator-frontend
+COPY --from=build /app/build .
+RUN npm i serve -g
+CMD ["serve", "-s", "-l", "8081"]
