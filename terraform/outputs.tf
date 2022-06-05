@@ -17,3 +17,8 @@ output "loadbalance_pub" {
   description = "Loadbalance Public IP"
   value       = aws_instance.loadbalance.public_ip
 }
+
+output "image_repository" {
+  description = "Image repository"
+  value       = aws_ecr_repository.jpv.repository_url
+}
