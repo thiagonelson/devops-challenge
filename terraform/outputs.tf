@@ -13,7 +13,7 @@ output "loadbalance" {
   value       = aws_instance.loadbalance.private_ip
 }
 
-output "loadbalance_pub"
+output "loadbalance_pub" { 
   description = "Loadbalance Public IP"
   value       = aws_instance.loadbalance.public_ip
 }
