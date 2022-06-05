@@ -18,8 +18,11 @@
 
 - name: Configure HAProxy
   template:
-    src: roles/lb/template/haproxy.cfg
+    src: roles/lb/template/haproxy.j2
     dest: /etc/haproxy/haproxy.cfg
+    owner: root
+    group: root
+    mode: 0644
 
 - name: Restart HAProxy
   systemd:
