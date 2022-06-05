@@ -26,8 +26,7 @@ Makefile
 ```bash
 apt-get install build-essential
 ```
- - Windows
-[Windows](http://gnuwin32.sourceforge.net/packages/make.htm)
+ - [Windows](http://gnuwin32.sourceforge.net/packages/make.htm)
 
 
 
