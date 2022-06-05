@@ -6,7 +6,7 @@ resource "aws_security_group" "sg_loadbalance" {
         description = "HTTP usage"
         from_port = 80
         to_port = 80
-        protocol_tcp = "tcp"
+        protocol = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
         ipv6_cidr_blocks = ["::/0"]
     }
@@ -15,9 +15,27 @@ resource "aws_security_group" "sg_loadbalance" {
         description = "HTTPS usage"
         from_port = 443
         to_port = 443
-        protocol_tcp = "tcp"
+        protocol = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
         ipv6_cidr_blocks = ["::/0"]
     }
+
+    ingress {
+        description = "SSH usage"
+        from_port = 22
+        to_port = 22
+        protocol = "tcp"
+        cidr_blocks = ["0.0.0.0/0"]
+        ipv6_cidr_blocks = ["::/0"]
+    }
+
+  egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
     
 }
