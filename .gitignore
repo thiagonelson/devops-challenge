@@ -28,3 +28,5 @@ tags
 
 # End of https://www.toptal.com/developers/gitignore/api/ansible,vim
 inventory/cluster/hosts.ini
+terraform/.terraform.lock.hcl
+terraform/plan*
