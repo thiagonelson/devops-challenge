@@ -1,0 +1,29 @@
+- name: Upgrade system
+  apt:
+   upgrade: dist
+   update_cache: yes
+
+- name: Install HAProxy
+  apt:
+    pkg:
+      - haproxy
+      - haproxy-log-analysis
+      - haproxyctl
+      - hatop
+ 
+- name: HAProxy installed
+  package:
+      name: haproxy
+      state: present
+
+- name: Configure HAProxy
+  template:
+    src: roles/lb/template/haproxy.cfg
+    dest: /etc/haproxy/haproxy.cfg
+
+- name: Restart HAProxy
+  systemd:
+      name: haproxy
+      daemon_reload: yes
+      state: restarted
+      enabled: yes
