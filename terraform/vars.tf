@@ -11,7 +11,7 @@ variable "ssh_keys" {
 
 variable "pvt_key" {
   type = string
-  default = "~/.ssh/id_aws_challenge"
+  default = "~/.ssh/id_ghub_devops"
   description = "(Ansible) Path to private key, to maintain servers."
   sensitive = true
 }
