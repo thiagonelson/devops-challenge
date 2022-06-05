@@ -7,12 +7,17 @@
   - Helm
   - Makefile
 
-Needs to set values on .env file, model in .env.sample
+ *Needs to set values on .env file, model in .env.sample
+
 
 [AWS CLI - Installing](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
 [Terraform - Installing](https://learn.hashicorp.com/tutorials/terraform/install-cli)
+
 [Docker - Installing](https://docs.docker.com/get-docker/)
+
 [Kubectl - Installing](https://kubernetes.io/docs/tasks/tools/)
+
 [Helm - Installing](https://helm.sh/docs/helm/helm_install/)
 
 Makefile
@@ -28,24 +33,29 @@ apt-get install build-essential
 
 ## Infra
 
-# Init
+### Init
 
 ```bash
 make tf-init
 ```
 
-# Plan
+### Plan
 ```bash
 make tf-plan
 ```
 
-# Apply 
+### Apply 
 ```bash
 make tf-plan
 ```
 
-# Destroy
+### Destroy
 ```bash
 make tf-destroy
+```
+
+## Ansible
+```bash
+ansible-playboy site.yml
 ```
 
